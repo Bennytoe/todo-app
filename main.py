@@ -1,5 +1,10 @@
-from functions import get_todos, write_todos
+from functions import get_todos, write_todos, FILEPATH
+
 import time
+
+now = time.strftime("%b %d, %Y %H:%M:%S")
+print("The time is below:")
+print(now)
 
 while True:
     # Get user input and strip space chars from it
@@ -13,7 +18,7 @@ while True:
 
         todos.append(todo + '\n')
 
-        write_todos("todos.txt", todos)
+        write_todos(FILEPATH, todos)
 
     elif user_action.startswith("show"):
         todos = get_todos()
@@ -37,7 +42,7 @@ while True:
             new_todo = input("Enter new todo: ")
             todos[number] = new_todo + '\n'
 
-            write_todos("todos.txt", todos)
+            write_todos(FILEPATH, todos)
 
         except ValueError:
             print("Command is not valid")
