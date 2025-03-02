@@ -18,7 +18,7 @@ while True:
 
         todos.append(todo + '\n')
 
-        write_todos(FILEPATH, todos)
+        write_todos(todos)  # Corrected: todos_args first
 
     elif user_action.startswith("show"):
         todos = get_todos()
@@ -29,12 +29,9 @@ while True:
             row = f"{index + 1}-{item}"
             print(row)
 
-
     elif user_action.startswith("edit"):
         try:
             number = int(user_action[5:])
-            print(number)
-
             number = number - 1
 
             todos = get_todos()
@@ -42,7 +39,7 @@ while True:
             new_todo = input("Enter new todo: ")
             todos[number] = new_todo + '\n'
 
-            write_todos(FILEPATH, todos)
+            write_todos(todos)
 
         except ValueError:
             print("Command is not valid")
@@ -65,7 +62,6 @@ while True:
             print(message)
         except IndexError:
             print("There is no item with that number.")
-            continue
 
     elif user_action.startswith("exit"):
         break
