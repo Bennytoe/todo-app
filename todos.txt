@@ -3,3 +3,6 @@ ride a bike
 play soccer
 go for a walk
 go to the gym
+hi
+hello
+play pong
