@@ -22,7 +22,7 @@ while True:
 
     elif user_action.startswith("show"):
         todos = get_todos()
-        # new_todos = [item.strip('\n') for item in todos] # list comprehension
+
 
         for index, item in enumerate(todos):
             item = item.strip('\n')
